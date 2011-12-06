@@ -3,7 +3,7 @@
 #define _THLGOOD_H_
 
 /*	For new Line */
-#define _NEWLINE_	putchar("n\")
+#define _NEWLINE_	putchar('\n')
 
 /* print "Hello, World" */
 #define ECHO_MSG	printf("Hello, World\n")
@@ -17,18 +17,21 @@
 			}
 
 /* print a string */
-void define Ps(a)
+void Ps(char *a)
 {
 	printf("%s\n", a);
 }
 
 /* print integer */
-void Pi(a)
+ void Pi(int a)
 {
-	printf("%d\n", a)
+	printf("%d\n", a);
 }
 
 /* Get max value */
-#define MAX(type)	type max##type()
+#define MAX(type)	type max##type(type a, type b)	\
+			{				\
+				return a > b ? a : b;	\
+			}
 
 #endif
