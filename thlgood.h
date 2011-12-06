@@ -2,6 +2,13 @@
 #ifndef _THLGOOD_H_
 #define _THLGOOD_H_
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdarg.h>
+#include <string.h>
+
 /*	For new Line */
 #define _NEWLINE_	putchar('\n')
 
