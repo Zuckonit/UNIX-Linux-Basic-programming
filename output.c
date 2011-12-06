@@ -1,3 +1,14 @@
+/*
+ *title:		UNIX/Linux print series	
+ *
+ *author:	yucoat thlgood(AT)yucoat.com www.yucoat.com
+ *
+ *date:		6 Dec 2011
+ *
+ *version:	0.1
+ *
+ *log:		NULL
+ */
 #include "thlgood.h"
 
 int main(void)
