@@ -10,11 +10,10 @@
  *log:		NULL
  */
 
-#include <stdio.h>		// for IO
+#include <stdio.h>		//for Basic Input/Output
 #include <fcntl.h>		//for open()
-#include <unistd.h>
-#include <string.h>
-#include <sys/stat.h>
+#include <string.h>		//for strlen
+#include <sys/stat.h>		//S_IRUSR ... macro
 #include <stdlib.h>		//for exit()
 
 int main(int argc, char *argv[])
