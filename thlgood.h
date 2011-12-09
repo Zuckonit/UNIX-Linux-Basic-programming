@@ -2,7 +2,6 @@
 #ifndef _THLGOOD_H_
 #define _THLGOOD_H_
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -40,6 +39,4 @@ void Ps(char *a)
 			{				\
 				return a > b ? a : b;	\
 			}
-
-
 #endif
