@@ -1,0 +1,17 @@
+name:		ee
+version:	1.1
+author:		thlgood
+data:		Dec 18 2011
+license:	GPLv2
+blog:		www.yucoat.com
+
+
+This program "ee" is to find a string from a ASCII file.
+
+Why it was named "ee"?
+No reason, maybe "ee" is very short and dosen't conflict with other Linux command!
+
+Why do you want to write it?
+Only for practice.
+
+
