@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BufLen	ee/main.c	/^int BufLen = 0;$/;"	v
+CheckStr	ee/ee.h	/^bool CheckStr(char *mother, char *son);$/;"	p	signature:(char *mother, char *son)
+CheckStr	ee/linebuf.c	/^bool CheckStr(char *mother, char *son)$/;"	f	signature:(char *mother, char *son)
+CurLine	ee/main.c	/^int CurLine = 0;$/;"	v
+DstLine	ee/main.c	/^int DstLine = 1;$/;"	v
+DstStr	ee/main.c	/^char DstStr[256];$/;"	v
+ECHO_MSG	thlgood.h	15;"	d
+EE_H_INCLUDED	ee/ee.h	2;"	d
+EmptyBuf	ee/ee.h	/^void EmptyBuf();$/;"	p	signature:()
+EmptyBuf	ee/linebuf.c	/^void EmptyBuf()$/;"	f
+File	socket/trans/cli.c	/^char *File;$/;"	v
+Filename	ee/main.c	/^char Filename[256];$/;"	v
+InitArgs	ee/ee.h	/^void InitArgs(int argc, char *argv[]);$/;"	p	signature:(int argc, char *argv[])
+InitArgs	ee/init.c	/^void InitArgs(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+LineBuf	ee/main.c	/^char *LineBuf = NULL;$/;"	v
+Lines	ee/main.c	/^int Lines = 0;$/;"	v
+MAX	thlgood.h	38;"	d
+Pi	thlgood.h	/^ void Pi(int a)$/;"	f	signature:(int a)
+PrintBuf	ee/ee.h	/^void PrintBuf();$/;"	p	signature:()
+PrintBuf	ee/linebuf.c	/^void PrintBuf()$/;"	f
+Ps	thlgood.h	/^void Ps(char *a)$/;"	f	signature:(char *a)
+PushToBuf	ee/ee.h	/^void PushToBuf(char c);$/;"	p	signature:(char c)
+PushToBuf	ee/linebuf.c	/^void PushToBuf(char c)$/;"	f	signature:(char c)
+SWAP	thlgood.h	18;"	d
+SerIP	socket/trans/cli.c	/^char *SerIP = "127.0.0.1";$/;"	v
+Usage	ee/ee.h	/^void Usage();$/;"	p	signature:()
+Usage	ee/init.c	/^void Usage()$/;"	f
+_NEWLINE_	thlgood.h	12;"	d
+_PORT_	socket/trans/cli.c	27;"	d	file:
+_SER_PORT_	socket/trans/ser.c	28;"	d	file:
+_THLGOOD_H_	thlgood.h	3;"	d
+init_daemon	socket/ser.c	/^void init_daemon()$/;"	f
+main	FileOperate/open.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	InputOutput/output.c	/^int main(void)$/;"	f	signature:(void)
+main	ee/main.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	progress/forks.c	/^int main()$/;"	f
+main	socket/ser.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	socket/trans/cli.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	socket/trans/ser.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	xtea/xTea.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	xtea/xtea.c	/^int main()$/;"	f
+savefile	socket/trans/ser.c	/^char *savefile = "out";$/;"	v
+uchar	xtea/xtea.c	/^typedef unsigned char uchar;$/;"	t	file:
+xtea	xtea/xtea.c	/^void xtea(unsigned int rounds, uint32_t in, uint32_t out, const uchar *const key, int mod)$/;"	f	signature:(unsigned int rounds, uint32_t in, uint32_t out, const uchar *const key, int mod)
