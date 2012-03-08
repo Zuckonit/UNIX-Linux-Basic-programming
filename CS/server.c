@@ -9,12 +9,6 @@
 
 int main(int argc, char *argv[])
 {
-/*  	if(argc != 2)
-	{
-		fputs("Too less argument!\n", stderr);
-		exit(1);
-	}*/
-
 	int sock;
 	struct sockaddr_in SE;
 	memset(&SE, 0, sizeof(SE));
@@ -41,6 +35,9 @@ int main(int argc, char *argv[])
 		struct sockaddr_in CL;
 		socklen_t CLlen = sizeof(CL);
 		int CLsock;
+		ssize_t RElen;
+		char buf[BUFSIZ];
+
 		char CLName[INET_ADDRSTRLEN];
 
 		if ((CLsock = accept(sock, (struct sockaddr*)&CL, &CLlen)) < 0)
@@ -48,13 +45,29 @@ int main(int argc, char *argv[])
 			perror("accept");
 			exit(1);
 		}
-		if(inet_ntop(PF_INET, &CL.sin_addr.s_addr, CLName, sizeof(CLName)) == NULL)
+		if(inet_ntop(PF_INET, 
+					&CL.sin_addr.s_addr, 
+					CLName, sizeof(CLName)) == NULL)
 		{
 			perror("inet_ntop");
 			exit(1);
 		}
 		else
 			printf("Client:%s\t%d\n", CLName, ntohs(CL.sin_port));
+		while (1)
+		{
+			RElen = recv(CLsock, buf, BUFSIZ, 0);
+			buf[RElen-2] = '\0';
+			printf("%s\n", buf);
+			fflush(stdin);
+			if(!strcmp(buf, "end"))
+			{
+				close(CLsock);
+				break;
+			}
+		}
+		printf("Disconnect Client:%s\t%d\n", CLName, ntohs(CL.sin_port));
+
 	}
 	return 0;
 }
