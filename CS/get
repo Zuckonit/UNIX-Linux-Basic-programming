@@ -1,0 +1,11 @@
+GET /index.php HTTP/1.1
+Host: www.baidu.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.78 Safari/535.11
+Accept: */*
+Referer: http://www.wireshark.org/lists/wireshark-users/200905/msg00128.html
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: zh-CN,zh;q=0.8
+Accept-Charset: GBK,utf-8;q=0.7,*;q=0.3
+Cookie: __utma=87653150.1618228268.1331442607.1331442607.1331442845.2; __utmb=87653150.1.10.1331442845; __utmc=87653150; __utmz=87653150.1331442845.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)
+

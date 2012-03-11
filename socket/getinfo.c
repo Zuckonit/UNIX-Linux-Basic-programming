@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	mask.ai_socktype = SOCK_STREAM;
 	mask.ai_protocol = IPPROTO_TCP;
 
-	if ((AddrVal = getaddrinfo(argv[1], argv[2], &mask, &HostInfo)) != 0)
+	if ((AddrVal = getaddrinfo(argv[1], NULL, &mask, &HostInfo)) != 0)
 	{
 		perror("getaddrinfo");
 		exit(1);
@@ -32,13 +32,13 @@ void PrintAddr(const struct sockaddr *addr, FILE *stream)
 		return;
 	void *NumAddr;
 	char AddrBuf[INET6_ADDRSTRLEN];
-	in_port_t port;
+//	in_port_t port;
 
 	switch(addr->sa_family)
 	{
 		case AF_INET:
 			NumAddr = &((struct sockaddr_in *) addr)->sin_addr;
-			port = ntohs(((struct sockaddr_in *)addr)->sin_port);
+//			port = ntohs(((struct sockaddr_in *)addr)->sin_port);
 			break;
 		default:
 			fputs("Unknow ", stream);
@@ -51,8 +51,8 @@ void PrintAddr(const struct sockaddr *addr, FILE *stream)
 	}
 	else
 	{
-		fprintf(stream, "%s", AddrBuf);
-		if(port != 0)
-			fprintf(stream, "\t%u\n", port);
+		fprintf(stream, "%s\n", AddrBuf);
+//		if(port != 0)
+//			fprintf(stream, "\t%u\n", port);
 	}
 }
