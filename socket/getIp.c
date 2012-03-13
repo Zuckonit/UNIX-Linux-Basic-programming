@@ -5,9 +5,9 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <sys/socket.h>
-#include <netinet/in.h>
 
-int main(int argc, char *argv[])
+
+int queryIp(const char argv[])
 {
 	struct addrinfo addrC;
 	struct addrinfo *addrL;
@@ -16,38 +16,35 @@ int main(int argc, char *argv[])
 	memset(&addrC, 0, sizeof(addrC));
 	addrC.ai_family = PF_UNSPEC;
 	addrC.ai_socktype = SOCK_STREAM;
-//	addrC.ai_protocol = IPPROTO_TCP;
+	addrC.ai_protocol = IPPROTO_TCP;
 
-	if (getaddrinfo(argv[1], NULL, &addrC, &addrL) != 0)
+	if (getaddrinfo(argv, NULL, &addrC, &addrL) != 0)
 	{
 		perror("getaddrinfo!");
-		exit(1);
+		freeaddrinfo(addrL);
+		return -1;
 	}
 
 	for (temp = addrL; temp != NULL; temp = temp->ai_next)
 	{
 		char addrBuf[BUFSIZ];
 		void *addrCount;
-		inet_ntop (temp->ai_family, temp->ai_addr->sa_data, addrBuf, sizeof(char)*BUFSIZ);
-		switch (temp->ai_family)
-		{
-			case AF_INET: 
-				addrCount = &((struct sockaddr_in*)temp->ai_addr)->sin_addr;
-				break;
-			case AF_INET6:
-				addrCount = &((struct sockaddr_in6 *)temp->ai_addr)->sin6_addr;
-				break;
-			default:
-				perror("ai_family");
-				exit(1);
-		}
+		addrCount = &((struct sockaddr_in*)temp->ai_addr)->sin_addr;
 		inet_ntop(temp->ai_family, addrCount, addrBuf, BUFSIZ*sizeof(char));
 		printf("%s\n", addrBuf);
 	}
-	for (temp = addrL; temp != NULL; temp = addrL)
+
+	freeaddrinfo(addrL);
+	return 0;
+}
+
+int main(int argc, char *argv[1])
+{
+	if(argc != 2)
 	{
-		addrL = temp->ai_next;
-		free(temp);
+		fputs("lip <domain>\n", stderr);
+		exit(1);
 	}
+	queryIp(argv[1]);
 	return 0;
 }
